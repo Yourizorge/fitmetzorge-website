@@ -1,4 +1,4 @@
-﻿:root {
+:root {
   --ink: #101417;
   --soft-ink: #334047;
   --muted: #6c777d;
@@ -87,7 +87,7 @@ textarea {
   width: 100%;
   height: auto;
   object-fit: contain;
-  aspect-ratio: 1200 / 530;
+  aspect-ratio: 1800 / 790;
 }
 
 .site-nav {
@@ -205,7 +205,7 @@ textarea {
 .hero-logo {
   width: min(430px, 82vw);
   height: auto;
-  aspect-ratio: 1200 / 530;
+  aspect-ratio: 1800 / 790;
   object-fit: contain;
   padding: 14px;
   margin-bottom: 28px;
@@ -1372,7 +1372,7 @@ a.contact-method:hover {
 .footer-brand img {
   width: 240px;
   height: auto;
-  aspect-ratio: 1200 / 530;
+  aspect-ratio: 1800 / 790;
   object-fit: contain;
   padding: 12px;
   background: #fff;
