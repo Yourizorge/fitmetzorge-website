@@ -87,7 +87,7 @@ textarea {
   width: 100%;
   height: auto;
   object-fit: contain;
-  aspect-ratio: 1800 / 790;
+  aspect-ratio: 2968 / 1257;
 }
 
 .site-nav {
@@ -198,14 +198,14 @@ textarea {
 }
 
 .hero-content {
-  width: min(780px, 100%);
+  width: min(980px, 100%);
   color: #fff;
 }
 
 .hero-logo {
   width: min(430px, 82vw);
   height: auto;
-  aspect-ratio: 1800 / 790;
+  aspect-ratio: 2968 / 1257;
   object-fit: contain;
   padding: 14px;
   margin-bottom: 28px;
@@ -1642,6 +1642,718 @@ a.contact-method:hover {
   .reveal {
     opacity: 1;
     transform: none;
+  }
+}
+
+/* Fit Met Zorge app-style refresh - 2026 */
+:root {
+  --ink: #10151b;
+  --soft-ink: #65748a;
+  --muted: #8491a3;
+  --paper: #f4f0e6;
+  --panel: rgba(255, 255, 255, 0.92);
+  --panel-soft: #f8f6ef;
+  --line: rgba(16, 21, 27, 0.12);
+  --gold: #d5ac31;
+  --gold-dark: #b88f16;
+  --green: #2ecb8a;
+  --night: #060b12;
+  --night-soft: #101821;
+  --shadow: 0 24px 70px rgba(5, 8, 13, 0.16);
+}
+
+html {
+  background: var(--paper);
+}
+
+body {
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 18% 6%, rgba(213, 172, 49, 0.14), transparent 26rem),
+    radial-gradient(circle at 88% 18%, rgba(46, 203, 138, 0.10), transparent 30rem),
+    linear-gradient(180deg, #f7f3e9 0%, #ece7dc 100%);
+  font-weight: 650;
+}
+
+.site-header {
+  top: 14px;
+  width: min(1450px, calc(100% - 28px));
+  margin: 0 auto;
+  padding: 10px 12px 10px 18px;
+  background: rgba(6, 11, 18, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 24px;
+  box-shadow: 0 18px 50px rgba(5, 8, 13, 0.18);
+  backdrop-filter: blur(18px);
+}
+
+.site-header.scrolled,
+.site-header.menu-open {
+  background: rgba(6, 11, 18, 0.94);
+  box-shadow: 0 22px 70px rgba(5, 8, 13, 0.24);
+}
+
+.brand {
+  width: 240px;
+}
+
+.brand img,
+.footer-brand img {
+  filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.26));
+}
+
+.site-nav a {
+  min-height: 44px;
+  color: rgba(255, 255, 255, 0.72);
+  border-radius: 18px;
+  font-weight: 950;
+  letter-spacing: 0;
+}
+
+.site-nav a:hover,
+.site-nav a.active {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.10);
+}
+
+.site-nav .nav-login {
+  color: #11161d;
+  background: linear-gradient(135deg, #f2cf61, var(--gold));
+  border-radius: 18px;
+  box-shadow: 0 14px 28px rgba(213, 172, 49, 0.22);
+}
+
+.site-nav .nav-login:hover {
+  color: #11161d;
+  background: linear-gradient(135deg, #ffe184, #d7aa28);
+}
+
+.nav-toggle {
+  border-color: rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.nav-toggle span {
+  background: #ffffff;
+}
+
+.hero {
+  min-height: 92svh;
+  padding-top: 120px;
+}
+
+.hero-media {
+  background-image:
+    linear-gradient(90deg, rgba(6, 11, 18, 0.94), rgba(6, 11, 18, 0.58), rgba(6, 11, 18, 0.25)),
+    image-set(url("fit-met-zorge-hero.webp") type("image/webp"), url("fit-met-zorge-hero.jpg") type("image/jpeg"));
+  transform: scale(1.01);
+}
+
+.hero::after {
+  height: 52%;
+  background: linear-gradient(0deg, rgba(6, 11, 18, 0.95), transparent);
+}
+
+.hero-logo {
+  width: min(900px, 96vw);
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  filter: drop-shadow(0 28px 34px rgba(0, 0, 0, 0.45));
+}
+
+.eyebrow {
+  color: var(--gold);
+  font-weight: 1000;
+  letter-spacing: 0.08em;
+}
+
+.hero h1,
+.page-hero h1,
+.section-head h2,
+.split-copy h2,
+.dark-cta h2,
+.sync-copy h2,
+.intake-copy h2,
+.contact-details h2 {
+  letter-spacing: 0;
+}
+
+.hero h1 {
+  max-width: 980px;
+  font-size: clamp(3.2rem, 8.2vw, 8rem);
+}
+
+.hero-lead {
+  max-width: 760px;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: clamp(1.08rem, 1.7vw, 1.36rem);
+}
+
+.button {
+  border-radius: 18px;
+  min-height: 54px;
+  padding: 14px 22px;
+  font-weight: 1000;
+  box-shadow: none;
+  transform: translateZ(0);
+  transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease, border-color 160ms ease;
+}
+
+.button:hover,
+.plan-card:hover,
+.value-card:hover,
+.service-card:hover,
+.feature-card:hover,
+.result-card:hover,
+.mini-price-card:hover,
+.contact-method:hover {
+  transform: translateY(-2px);
+}
+
+.button.primary,
+.button.light,
+.site-nav .nav-login {
+  background: linear-gradient(135deg, #f1cf62, var(--gold));
+  color: #10151b;
+}
+
+.button.primary:hover,
+.button.light:hover {
+  background: linear-gradient(135deg, #ffe38d, #d5a728);
+  box-shadow: 0 20px 42px rgba(213, 172, 49, 0.24);
+}
+
+.button.ghost-light,
+.button.outline-light {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.20);
+  backdrop-filter: blur(12px);
+}
+
+.section,
+.page-hero {
+  padding-block: clamp(72px, 9vw, 118px);
+}
+
+.compact-hero {
+  padding-top: 138px;
+  background:
+    linear-gradient(135deg, rgba(6, 11, 18, 0.96), rgba(16, 24, 33, 0.94)),
+    radial-gradient(circle at 80% 20%, rgba(213, 172, 49, 0.22), transparent 24rem);
+  color: #ffffff;
+}
+
+.compact-hero .section-head p,
+.page-hero p {
+  color: rgba(255, 255, 255, 0.74);
+}
+
+.section-head {
+  width: min(940px, 100%);
+}
+
+.section-head h2,
+.page-hero h1 {
+  font-size: clamp(2.55rem, 5.6vw, 5.8rem);
+}
+
+.section-head p,
+.split-copy p,
+.sync-copy p,
+.intake-copy p,
+.contact-intro,
+.hero-lead {
+  font-weight: 650;
+}
+
+.value-grid,
+.service-grid,
+.feature-grid,
+.results-grid,
+.plan-grid,
+.extra-pricing-grid,
+.contact-card-grid,
+.timeline,
+.review-list,
+.before-after-grid {
+  gap: 18px;
+}
+
+.value-card,
+.service-card,
+.feature-card,
+.result-card,
+.timeline-card,
+.premium-form,
+.premium-panel,
+.plan-detail,
+.mini-price-card,
+.pricing-category,
+.contact-method,
+.contact-whatsapp-card,
+.signup-dialog,
+.device,
+.intake-steps article,
+.review-card,
+.before-after-card {
+  background: var(--panel);
+  border: 1px solid rgba(16, 21, 27, 0.10);
+  border-radius: 26px;
+  box-shadow: 0 24px 70px rgba(5, 8, 13, 0.10);
+}
+
+.value-card,
+.service-card,
+.feature-card,
+.result-card,
+.timeline-card,
+.premium-form,
+.premium-panel,
+.plan-detail,
+.mini-price-card,
+.pricing-category,
+.contact-method,
+.contact-whatsapp-card {
+  padding: clamp(22px, 3vw, 34px);
+}
+
+.icon-badge,
+.timeline-card span,
+.intake-steps span {
+  background: rgba(213, 172, 49, 0.16);
+  color: #a97b0f;
+  border-radius: 16px;
+}
+
+.split-section,
+.sync-section,
+.intake-section,
+.contact-grid,
+.about-layout,
+.review-layout,
+.app-hero {
+  align-items: stretch;
+  gap: 26px;
+}
+
+.dark-cta,
+.site-footer {
+  background:
+    linear-gradient(135deg, rgba(6, 11, 18, 0.98), rgba(14, 22, 30, 0.96)),
+    radial-gradient(circle at 82% 12%, rgba(213, 172, 49, 0.18), transparent 26rem);
+  border-radius: 0;
+}
+
+.dark-cta {
+  margin: clamp(40px, 6vw, 78px) clamp(18px, 5vw, 70px);
+  padding: clamp(34px, 5vw, 58px);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 30px;
+  box-shadow: 0 30px 90px rgba(5, 8, 13, 0.24);
+}
+
+.dark-cta h2,
+.dark-cta p {
+  color: #ffffff;
+}
+
+.plan-card {
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid rgba(16, 21, 27, 0.12);
+  border-radius: 24px;
+  color: var(--ink);
+  box-shadow: 0 18px 46px rgba(5, 8, 13, 0.08);
+}
+
+.plan-card.active,
+.plan-card:focus-visible {
+  border-color: rgba(213, 172, 49, 0.70);
+  background: linear-gradient(180deg, #ffffff, #fff7df);
+  box-shadow: 0 24px 70px rgba(213, 172, 49, 0.20);
+}
+
+.plan-card strong {
+  color: #11161d;
+}
+
+.plan-card span:first-child,
+.mini-price-card h2,
+.pricing-category h2 {
+  color: var(--ink);
+}
+
+.duo-note {
+  color: var(--soft-ink);
+}
+
+.duo-note strong {
+  color: #11161d;
+}
+
+.pricing-card-modern {
+  position: relative;
+  align-content: start;
+  min-height: 306px;
+  gap: 10px;
+  padding: 26px;
+}
+
+.pricing-card-modern.featured {
+  border-color: rgba(213, 172, 49, 0.82);
+  background: linear-gradient(180deg, #fffdf7 0%, #fff5d8 100%);
+  box-shadow: 0 28px 78px rgba(213, 172, 49, 0.18);
+}
+
+.pricing-card-modern .plan-title {
+  padding-right: 112px;
+  color: var(--ink);
+  font-size: 1.05rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.pricing-card-modern .plan-frequency {
+  color: var(--gold-dark);
+  font-size: 1.1rem;
+  font-weight: 950;
+}
+
+.session-price {
+  display: block;
+  margin: 8px 0 4px;
+  color: #10151b;
+  font-size: clamp(2.35rem, 4vw, 3.35rem);
+  font-weight: 950;
+  letter-spacing: 0;
+  line-height: 0.95;
+}
+
+.session-price span {
+  display: block;
+  margin-top: 8px;
+  color: var(--soft-ink);
+  font-size: 0.92rem;
+  font-weight: 900;
+  line-height: 1.2;
+  text-transform: none;
+}
+
+.pricing-card-modern small {
+  color: var(--soft-ink);
+  font-size: 0.98rem;
+  line-height: 1.35;
+}
+
+.monthly-price {
+  display: block;
+  align-self: end;
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid rgba(16, 21, 27, 0.12);
+  color: var(--soft-ink);
+  font-size: 0.95rem;
+  font-weight: 900;
+  line-height: 1.35;
+}
+
+.popular-badge {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: max-content;
+  max-width: calc(100% - 36px);
+  padding: 8px 10px;
+  border-radius: 999px;
+  background: #d5ac31;
+  color: #10151b !important;
+  font-size: 0.72rem;
+  font-weight: 950;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.mini-session-price {
+  font-size: clamp(2rem, 3vw, 2.7rem);
+}
+
+.pricing-footnote {
+  margin: 4px 0 0;
+  color: var(--soft-ink);
+  font-weight: 900;
+  text-align: center;
+}
+
+@media (max-width: 760px) {
+  .pricing-card-modern {
+    min-height: auto;
+    padding: 22px;
+  }
+
+  .pricing-card-modern .plan-title {
+    padding-right: 0;
+  }
+
+  .popular-badge {
+    position: static;
+    order: -1;
+    margin-bottom: 2px;
+  }
+
+  .session-price {
+    font-size: 2.35rem;
+  }
+}
+
+.premium-form input,
+.premium-form textarea,
+.premium-form select,
+.duration-option,
+.contact-method {
+  background: rgba(246, 248, 249, 0.92);
+  border: 1px solid rgba(16, 21, 27, 0.12);
+  border-radius: 18px;
+  color: var(--ink);
+}
+
+.premium-form input:focus,
+.premium-form textarea:focus,
+.premium-form select:focus {
+  outline: 3px solid rgba(213, 172, 49, 0.22);
+  border-color: rgba(213, 172, 49, 0.70);
+}
+
+.contact-method {
+  min-height: 104px;
+  display: grid;
+  align-content: center;
+  gap: 8px;
+}
+
+.contact-method::before,
+.footer-contact a::before {
+  display: inline-grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 14px;
+  background: rgba(213, 172, 49, 0.14);
+  color: #a97b0f;
+  font-weight: 1000;
+}
+
+.contact-method[href^="tel"]::before,
+.footer-contact a[href^="tel"]::before {
+  content: "☎";
+}
+
+.contact-method[href^="mailto"]::before,
+.footer-contact a[href^="mailto"]::before {
+  content: "✉";
+}
+
+.contact-method[href*="instagram"]::before,
+.footer-contact a[href*="instagram"]::before {
+  content: "IG";
+}
+
+.contact-method:not(a)::before {
+  content: "⌖";
+}
+
+.contact-method span,
+.premium-form label,
+.duration-field legend {
+  color: var(--soft-ink);
+  font-weight: 950;
+}
+
+.contact-method strong {
+  color: var(--ink);
+  font-size: 1.06rem;
+}
+
+.contact-whatsapp-card {
+  background: linear-gradient(145deg, #071018, #111a23);
+  color: #ffffff;
+}
+
+.contact-whatsapp-card p {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.button.whatsapp {
+  background: linear-gradient(135deg, #2fd790, #199c63);
+  color: #ffffff;
+}
+
+.site-footer {
+  margin-top: 0;
+  color: #ffffff;
+}
+
+.footer-brand img {
+  width: min(360px, 82vw);
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+}
+
+.footer-links a,
+.footer-contact a {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.footer-contact a {
+  gap: 12px;
+}
+
+.footer-contact a::before {
+  flex: 0 0 auto;
+  background: rgba(255, 255, 255, 0.10);
+  color: #ffffff;
+}
+
+.signup-modal {
+  backdrop-filter: blur(14px);
+}
+
+.signup-dialog {
+  overflow: hidden;
+}
+
+.signup-close {
+  border-radius: 16px;
+}
+
+@media (max-width: 1240px) {
+  .site-header {
+    top: 10px;
+    width: min(100% - 20px, 1450px);
+  }
+
+  .site-nav {
+    top: 88px;
+    left: 10px;
+    right: 10px;
+    background: rgba(6, 11, 18, 0.96);
+    border-color: rgba(255, 255, 255, 0.10);
+    border-radius: 24px;
+  }
+
+  .site-nav a {
+    color: rgba(255, 255, 255, 0.82);
+  }
+}
+
+@media (max-width: 720px) {
+  .site-header {
+    border-radius: 20px;
+  }
+
+  .brand {
+    width: 190px;
+  }
+
+  .hero {
+    min-height: 86svh;
+    padding-top: 112px;
+  }
+
+  .hero-logo {
+    width: min(560px, 96vw);
+  }
+
+  .hero h1 {
+    font-size: clamp(2.65rem, 13vw, 4.4rem);
+  }
+
+  .dark-cta {
+    margin-inline: 16px;
+    border-radius: 24px;
+  }
+
+  .value-card,
+  .service-card,
+  .feature-card,
+  .result-card,
+  .timeline-card,
+  .premium-form,
+  .premium-panel,
+  .plan-detail,
+  .mini-price-card,
+  .pricing-category,
+  .contact-method,
+  .contact-whatsapp-card {
+    border-radius: 22px;
+  }
+}
+
+/* Hero logo exact groter zichtbaar maken na het croppen van het logo-bestand. */
+.home-hero .hero-content {
+  width: min(1080px, 100%);
+}
+
+.home-hero .hero-logo {
+  width: min(980px, 96vw);
+  aspect-ratio: 2968 / 1257;
+  margin-bottom: 42px;
+}
+
+@media (max-width: 720px) {
+  .home-hero .hero-logo {
+    width: min(590px, 96vw);
+    margin-bottom: 28px;
+  }
+}
+
+/* Logo positie en formaat op verzoek: groter en verder naar links. */
+.site-header {
+  padding-left: 8px;
+}
+
+.site-header .brand {
+  width: 330px;
+  min-width: 280px;
+  margin-left: 0;
+}
+
+.home-hero .hero-content {
+  width: min(1260px, 100%);
+  margin-left: clamp(-48px, -3vw, -22px);
+}
+
+.home-hero .hero-logo {
+  width: min(630px, 92vw);
+  max-width: none;
+}
+
+@media (max-width: 1240px) {
+  .site-header .brand {
+    width: 260px;
+    min-width: 220px;
+  }
+}
+
+@media (max-width: 720px) {
+  .site-header {
+    padding-left: 10px;
+  }
+
+  .site-header .brand {
+    width: 205px;
+    min-width: 180px;
+  }
+
+  .home-hero .hero-content {
+    margin-left: 0;
+  }
+
+  .home-hero .hero-logo {
+    width: min(360px, 92vw);
   }
 }
 

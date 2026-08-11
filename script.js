@@ -19,39 +19,39 @@ let headerTicking = false;
 const planDetails = {
   "single-basis": {
     title: "Basis - 1 persoon",
-    text: "Voor wie wil starten met persoonlijke begeleiding, techniek en structuur. Je traint 4 keer per maand 60 minuten en krijgt een duidelijk plan waarmee je veilig en gericht vooruitgaat.",
-    points: ["60 minuten per training.", "Eerste training gratis.", "Maandelijks opzegbaar.", "Focus op techniek, uitvoering en basisprogressie."],
-    durations: ["60 min - EUR 200 p/m"]
+    text: "Voor wie wil starten met persoonlijke begeleiding, techniek en structuur. Je traint 1 keer per week, 4 trainingen per maand, voor EUR 50 per training.",
+    points: ["4 trainingen per maand.", "60 minuten per training.", "Persoonlijke begeleiding.", "EUR 200 per maand, maandelijks opzegbaar."],
+    durations: ["EUR 50 per training - EUR 200 p/m"]
   },
   "single-progressie": {
     title: "Progressie - 1 persoon",
-    text: "Voor wie sneller vooruit wil en meer begeleiding nodig heeft. Met 8 sessies per maand van 60 minuten blijft er meer ritme, controle en ruimte om techniek en trainingsopbouw te verbeteren.",
-    points: ["60 minuten per training.", "Eerste training gratis.", "Maandelijks opzegbaar.", "Gericht werken aan kracht, conditie en lichaamssamenstelling."],
-    durations: ["60 min - EUR 380 p/m"]
+    text: "Voor wie sneller vooruit wil en meer begeleiding nodig heeft. Je traint 2 keer per week, 8 trainingen per maand, voor EUR 47,50 per training.",
+    points: ["8 trainingen per maand.", "60 minuten per training.", "Meer begeleiding en regelmatige progressie.", "EUR 380 per maand, maandelijks opzegbaar."],
+    durations: ["EUR 47,50 per training - EUR 380 p/m"]
   },
   "single-transformatie": {
     title: "Transformatie - 1 persoon",
-    text: "Het meest intensieve traject voor wie echt wil veranderen. Met 12 sessies per maand van 60 minuten train je gemiddeld 3 keer per week onder begeleiding en bouw je maximale consistentie op.",
-    points: ["60 minuten per training.", "Eerste training gratis.", "Maandelijks opzegbaar.", "Sterke accountability door vaste trainingsmomenten."],
-    durations: ["60 min - EUR 480 p/m"]
+    text: "Het meest intensieve traject voor wie echt wil veranderen. Je traint 3 keer per week, 12 trainingen per maand, voor EUR 40 per training.",
+    points: ["12 trainingen per maand.", "60 minuten per training.", "Intensieve begeleiding en maximale structuur.", "EUR 480 per maand, maandelijks opzegbaar."],
+    durations: ["EUR 40 per training - EUR 480 p/m"]
   },
   "duo-basis": {
     title: "Duo Basis",
-    text: "Samen starten met personal training. Je traint met z'n tweeen, krijgt dezelfde technische begeleiding en houdt elkaar gemotiveerd.",
-    points: ["4 sessies per maand van 60 minuten.", "EUR 260 per maand totaal.", "Geschikt voor duo's die samen willen starten."],
-    durations: ["60 min - EUR 260 p/m totaal"]
+    text: "Samen starten met personal training. Je traint 1 keer per week met 2 personen voor EUR 32,50 p.p. per training.",
+    points: ["4 trainingen per maand.", "EUR 260 per maand totaal voor 2 personen.", "Geschikt voor duo's die samen willen starten."],
+    durations: ["EUR 32,50 p.p. per training - EUR 260 p/m totaal"]
   },
   "duo-progressie": {
     title: "Duo Progressie",
-    text: "Voor duo's die vaker willen trainen en samen een duidelijk ritme willen opbouwen. Meer sessies betekent meer structuur en meer kans om consistent te blijven.",
-    points: ["8 sessies per maand van 60 minuten.", "EUR 500 per maand totaal.", "Meer begeleiding, meer ritme en meer progressie."],
-    durations: ["60 min - EUR 500 p/m totaal"]
+    text: "Voor duo's die vaker willen trainen en samen een duidelijk ritme willen opbouwen. Je traint 2 keer per week voor EUR 31,25 p.p. per training.",
+    points: ["8 trainingen per maand.", "EUR 500 per maand totaal voor 2 personen.", "Meer begeleiding, meer ritme en meer progressie."],
+    durations: ["EUR 31,25 p.p. per training - EUR 500 p/m totaal"]
   },
   "duo-transformatie": {
     title: "Duo Transformatie",
-    text: "Het meest intensieve duo-traject. Je traint samen 12 keer per maand en werkt gericht aan kracht, conditie, techniek en discipline.",
-    points: ["12 sessies per maand van 60 minuten.", "EUR 660 per maand totaal.", "Voor duo's die serieus samen resultaat willen behalen."],
-    durations: ["60 min - EUR 660 p/m totaal"]
+    text: "Het meest intensieve duo-traject. Je traint samen 3 keer per week voor EUR 27,50 p.p. per training.",
+    points: ["12 trainingen per maand.", "EUR 660 per maand totaal voor 2 personen.", "Voor duo's die serieus samen resultaat willen behalen."],
+    durations: ["EUR 27,50 p.p. per training - EUR 660 p/m totaal"]
   },
   "online-coaching": {
     title: "Online coaching",
