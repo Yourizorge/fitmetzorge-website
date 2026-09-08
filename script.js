@@ -276,7 +276,7 @@ mailForms.forEach((form) => {
         throw new Error("provider");
       }
       accepted = true;
-      status.textContent = "De verzenddienst heeft je aanvraag geaccepteerd. Dit bevestigt nog geen bezorging in de mailbox.";
+      status.textContent = "Fit Met Zorge heeft je aanvraag ontvangen en zal snel contact met je opnemen.";
       // Only a non-sensitive, short-lived acceptance marker is stored.
       try { sessionStorage.setItem("fitmetzorge-form-accepted", String(Date.now())); } catch {}
       window.location.assign(nextUrl.href);
@@ -301,7 +301,7 @@ if (receipt) {
     const acceptedAt = Number(sessionStorage.getItem("fitmetzorge-form-accepted"));
     sessionStorage.removeItem("fitmetzorge-form-accepted");
     if (acceptedAt > 0 && Date.now() - acceptedAt < 300000) {
-      receipt.textContent = "De verzenddienst heeft je aanvraag geaccepteerd. Dit bevestigt nog geen bezorging in de mailbox. Ik neem zo snel mogelijk contact met je op zodra je aanvraag is ontvangen.";
+      receipt.textContent = "Fit Met Zorge heeft je aanvraag ontvangen en zal snel contact met je opnemen.";
     }
   } catch {}
 }

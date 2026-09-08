@@ -82,9 +82,11 @@ const server = http.createServer((req, res) => {
         release();
         if (scenario.endsWith('success')) {
           await page.waitForURL('**/bedankt.html');
-          assert((await page.locator('[data-form-receipt]').innerText()).includes('geaccepteerd'));
+          assert.equal(await page.locator('h1').innerText(), 'Bedankt voor je aanvraag.');
+          assert.equal(await page.locator('[data-form-receipt]').innerText(), 'Fit Met Zorge heeft je aanvraag ontvangen en zal snel contact met je opnemen.');
+          assert.equal(await page.locator('main strong').innerText(), 'Fit met Zorge zonder zorgen.');
           await page.reload();
-          assert((await page.locator('[data-form-receipt]').innerText()).includes('geen ontvangst bevestigen'));
+          assert.equal(await page.locator('[data-form-receipt]').innerText(), 'Fit Met Zorge heeft je aanvraag ontvangen en zal snel contact met je opnemen.');
         } else {
           await page.waitForFunction(() => !document.querySelector('[type=submit]').disabled);
           assert.equal(await form.locator('[name=Naam]').inputValue(), 'Synthetische Test');
