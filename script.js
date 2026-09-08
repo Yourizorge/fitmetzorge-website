@@ -15,6 +15,19 @@ const revealItems = document.querySelectorAll(".reveal");
 const reviewStorageKey = "fit-met-zorge-reviews";
 let headerScrolled = null;
 let headerTicking = false;
+let signupScrollY = 0;
+let signupTrigger = null;
+
+function syncSignupViewport() {
+  if (!signupModal || signupModal.hidden) return;
+  const viewport = window.visualViewport;
+  signupModal.style.setProperty("--signup-height", `${viewport?.height ?? window.innerHeight}px`);
+  signupModal.style.setProperty("--signup-top", `${viewport?.offsetTop ?? 0}px`);
+}
+
+window.visualViewport?.addEventListener("resize", syncSignupViewport);
+window.visualViewport?.addEventListener("scroll", syncSignupViewport);
+window.addEventListener("resize", syncSignupViewport);
 
 const planDetails = {
   "single-basis": {
@@ -102,6 +115,11 @@ function renderDurations(detail) {
 
 function openSignup(detail) {
   if (!signupModal) return;
+  if (signupModal.hidden) {
+    signupScrollY = window.scrollY;
+    signupTrigger = document.activeElement;
+    document.body.style.top = `-${signupScrollY}px`;
+  }
   if (signupPlan) signupPlan.value = detail.title;
   if (signupTitle) {
     signupTitle.textContent = `Je hebt gekozen voor: ${detail.title}. Vink je gewenste duur aan en vul je gegevens in.`;
@@ -109,13 +127,18 @@ function openSignup(detail) {
   renderDurations(detail);
   signupModal.hidden = false;
   document.body.classList.add("signup-open");
-  signupModal.querySelector(".duration-option input, input:not([type='hidden'])")?.focus();
+  syncSignupViewport();
+  signupModal.querySelector(".signup-dialog").scrollTop = 0;
+  signupModal.querySelector("[data-signup-close]")?.focus({ preventScroll: true });
 }
 
 function closeSignup() {
-  if (!signupModal) return;
+  if (!signupModal || signupModal.hidden) return;
   signupModal.hidden = true;
   document.body.classList.remove("signup-open");
+  document.body.style.top = "";
+  window.scrollTo({ top: signupScrollY, behavior: "instant" });
+  signupTrigger?.focus({ preventScroll: true });
 }
 
 function escapeHtml(value) {
@@ -174,6 +197,19 @@ nav?.addEventListener("click", (event) => {
 });
 
 document.addEventListener("keydown", (event) => {
+  if (event.key === "Tab" && signupModal && !signupModal.hidden) {
+    const controls = [...signupModal.querySelectorAll("button, input, textarea, a[href]")]
+      .filter((element) => !element.disabled && element.getClientRects().length && element.tabIndex >= 0);
+    const first = controls[0];
+    const last = controls[controls.length - 1];
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last?.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first?.focus();
+    }
+  }
   if (event.key === "Escape") {
     closeMenu();
     closeSignup();
@@ -202,15 +238,73 @@ signupModal?.addEventListener("click", (event) => {
 });
 
 mailForms.forEach((form) => {
-  form.addEventListener("submit", (event) => {
-    const status = form.querySelector("[data-form-status]");
-    const nextField = form.querySelector("[data-form-next]");
-    if (nextField) {
-      nextField.value = `${window.location.origin}${window.location.pathname.replace(/[^/]*$/, "")}bedankt.html`;
+  let pending = false;
+  const status = form.querySelector("[data-form-status]");
+  const nextField = form.querySelector("[data-form-next]");
+  const nextUrl = new URL("bedankt.html", window.location.href);
+  if (nextField) nextField.value = nextUrl.href;
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    if (pending || !form.reportValidity()) return;
+    const data = new FormData(form);
+    if (data.get("_honey")) {
+      status.textContent = "Je aanvraag kon niet worden verwerkt. Neem contact op via info@fitmetzorge.com.";
+      return;
     }
-    if (status) status.textContent = "Je aanvraag wordt verzonden...";
+    pending = true;
+    const button = form.querySelector("[type='submit']");
+    button.disabled = true;
+    form.setAttribute("aria-busy", "true");
+    status.textContent = "Je aanvraag wordt verzonden…";
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 20000);
+    let accepted = false;
+    try {
+      // Keep the existing recipient; AJAX lets failures retain the current form.
+      const endpoint = new URL(form.action);
+      endpoint.pathname = `/ajax${endpoint.pathname}`;
+      const response = await fetch(endpoint, {
+        method: "POST",
+        headers: { "Accept": "application/json" },
+        body: data,
+        signal: controller.signal
+      });
+      if (!response.ok) throw new Error("provider");
+      const result = await response.json();
+      const activationRequired = /activat|confirm.*email|verify/i.test(String(result.message || ""));
+      if (activationRequired || !(result.success === true || result.success === "true")) {
+        throw new Error("provider");
+      }
+      accepted = true;
+      status.textContent = "De verzenddienst heeft je aanvraag geaccepteerd. Dit bevestigt nog geen bezorging in de mailbox.";
+      // Only a non-sensitive, short-lived acceptance marker is stored.
+      try { sessionStorage.setItem("fitmetzorge-form-accepted", String(Date.now())); } catch {}
+      window.location.assign(nextUrl.href);
+    } catch (error) {
+      status.textContent = error.message === "provider"
+        ? "De verzenddienst heeft je aanvraag niet bevestigd. Je gegevens blijven hier staan. Probeer later opnieuw of neem contact op via info@fitmetzorge.com."
+        : "We konden niet vaststellen of je aanvraag is ontvangen. Je gegevens blijven hier staan. Controleer je verbinding. Neem bij twijfel contact op via info@fitmetzorge.com voordat je opnieuw verzendt.";
+    } finally {
+      clearTimeout(timeout);
+      form.removeAttribute("aria-busy");
+      if (!accepted) {
+        pending = false;
+        button.disabled = false;
+      }
+    }
   });
 });
+
+const receipt = document.querySelector("[data-form-receipt]");
+if (receipt) {
+  try {
+    const acceptedAt = Number(sessionStorage.getItem("fitmetzorge-form-accepted"));
+    sessionStorage.removeItem("fitmetzorge-form-accepted");
+    if (acceptedAt > 0 && Date.now() - acceptedAt < 300000) {
+      receipt.textContent = "De verzenddienst heeft je aanvraag geaccepteerd. Dit bevestigt nog geen bezorging in de mailbox. Ik neem zo snel mogelijk contact met je op zodra je aanvraag is ontvangen.";
+    }
+  } catch {}
+}
 
 renderStoredReviews();
 

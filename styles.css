@@ -37,6 +37,8 @@ body.menu-open {
 }
 
 body.signup-open {
+  position: fixed;
+  width: 100%;
   overflow: hidden;
 }
 
@@ -92,6 +94,7 @@ textarea {
 
 .site-nav {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: flex-end;
   gap: 6px;
@@ -780,6 +783,7 @@ textarea {
 }
 
 .intake-section {
+  overflow-wrap: anywhere;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(340px, 0.8fr);
   align-items: start;
@@ -816,6 +820,7 @@ textarea {
 }
 
 .premium-form {
+  min-width: 0;
   display: grid;
   gap: 14px;
   padding: 24px;
@@ -836,6 +841,7 @@ textarea {
 .premium-form input,
 .premium-form select,
 .premium-form textarea {
+  min-width: 0;
   width: 100%;
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -1204,6 +1210,9 @@ a.contact-method:hover {
 .signup-modal {
   position: fixed;
   inset: 0;
+  top: var(--signup-top, 0px);
+  bottom: auto;
+  height: var(--signup-height, 100dvh);
   z-index: 2000;
   display: grid;
   place-items: center;
@@ -1215,10 +1224,14 @@ a.contact-method:hover {
 .signup-dialog {
   position: relative;
   width: min(920px, 100%);
-  max-height: min(760px, calc(100svh - 36px));
+  max-height: min(760px, calc(var(--signup-height, 100dvh) - 36px));
+  min-height: 0;
   display: grid;
   grid-template-columns: minmax(0, 0.78fr) minmax(320px, 1fr);
   overflow: auto;
+  overscroll-behavior: contain;
+  scroll-padding-block: 20px;
+  overflow-wrap: anywhere;
   background: var(--paper);
   border-radius: 8px;
   box-shadow: 0 22px 70px rgba(0, 0, 0, 0.34);
@@ -1362,6 +1375,7 @@ a.contact-method:hover {
 
 .site-footer {
   display: grid;
+  overflow-wrap: anywhere;
   grid-template-columns: minmax(220px, 1.1fr) minmax(180px, 0.8fr) minmax(220px, 1fr);
   gap: 34px;
   color: #fff;
@@ -2219,10 +2233,6 @@ body {
 
 .signup-modal {
   backdrop-filter: blur(14px);
-}
-
-.signup-dialog {
-  overflow: hidden;
 }
 
 .signup-close {
