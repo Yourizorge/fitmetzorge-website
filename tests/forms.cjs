@@ -17,7 +17,7 @@ const server = http.createServer((req, res) => {
 });
 (async () => {
   await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
-  const base = `http://127.0.0.1:${server.address().port}`;
+  const base = process.env.LIVE_BASE || `http://127.0.0.1:${server.address().port}`;
   console.log('Local server ready; launching browser');
   const browser = await chromium.launch({ channel: 'msedge', headless: true });
   let checks = 0;
@@ -73,10 +73,13 @@ const server = http.createServer((req, res) => {
         await new Promise(resolve => setTimeout(resolve, 100));
         assert.equal(requests, 1, 'double submit sends one request');
         assert(payload.includes('synthetic@example.com'));
+        assert(payload.includes('Iedere vier weken (28 dagen); 13 betaalperiodes per jaar; inclusief btw; voor nieuwe overeenkomsten'));
+        assert(payload.includes('Vier weken'));
+        if (pageName === 'contact') assert(payload.includes('Vrijblijvende intake; nog geen pakket gekozen'));
         assert(payload.includes(`${base}/bedankt.html`));
         if (pageName === 'tarieven') {
           assert(payload.includes('Duo Progressie'));
-          assert(payload.includes('EUR 31,25 p.p. per training - EUR 500 p/m totaal'));
+          assert(payload.includes('€31,25 p.p. per training - €500 per 4 weken totaal'));
         }
         if (scenario === 'timeout') await page.clock.runFor(20001);
         release();

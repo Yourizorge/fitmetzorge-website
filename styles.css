@@ -2061,14 +2061,12 @@ body {
   line-height: 1.35;
 }
 
-.monthly-price {
+.period-price {
   display: block;
-  align-self: end;
-  margin-top: auto;
-  padding-top: 14px;
-  border-top: 1px solid rgba(16, 21, 27, 0.12);
-  color: var(--soft-ink);
-  font-size: 0.95rem;
+  margin: 0;
+  padding: 0;
+  color: var(--ink);
+  font-size: 1.25rem;
   font-weight: 900;
   line-height: 1.35;
 }
@@ -2367,3 +2365,32 @@ body {
   }
 }
 
+
+/* Keep four-week prices and terms readable with enlarged text. */
+.pricing-stack, .plan-card, .pricing-terms {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.plan-card {
+  grid-template-columns: minmax(0, 1fr);
+}
+.pricing-card-modern .plan-title {
+  padding-right: 0;
+}
+.pricing-card-modern .popular-badge {
+  position: static;
+  order: -1;
+  max-width: 100%;
+}
+.pricing-terms p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+.plan-card .period-price {
+  font-size: 1.25rem;
+  line-height: 1.4;
+}
+.plan-card small {
+  font-size: 0.98rem;
+  line-height: 1.5;
+}

@@ -32,47 +32,54 @@ window.addEventListener("resize", syncSignupViewport);
 const planDetails = {
   "single-basis": {
     title: "Basis - 1 persoon",
-    text: "Voor wie wil starten met persoonlijke begeleiding, techniek en structuur. Je traint 1 keer per week, 4 trainingen per maand, voor EUR 50 per training.",
-    points: ["4 trainingen per maand.", "60 minuten per training.", "Persoonlijke begeleiding.", "EUR 200 per maand, maandelijks opzegbaar."],
-    durations: ["EUR 50 per training - EUR 200 p/m"]
+    text: "Voor wie wil starten met persoonlijke begeleiding, techniek en structuur. Je traint 1 keer per week, 4 trainingen per 4 weken, voor €50 per training.",
+    points: ["4 trainingen per 4 weken.", "60 minuten per training.", "Persoonlijke begeleiding.", "€200 per 4 weken, opzegbaar met een opzegtermijn van vier weken."],
+    durations: ["€50 per training - €200 per 4 weken"]
   },
   "single-progressie": {
     title: "Progressie - 1 persoon",
-    text: "Voor wie sneller vooruit wil en meer begeleiding nodig heeft. Je traint 2 keer per week, 8 trainingen per maand, voor EUR 47,50 per training.",
-    points: ["8 trainingen per maand.", "60 minuten per training.", "Meer begeleiding en regelmatige progressie.", "EUR 380 per maand, maandelijks opzegbaar."],
-    durations: ["EUR 47,50 per training - EUR 380 p/m"]
+    text: "Voor wie sneller vooruit wil en meer begeleiding nodig heeft. Je traint 2 keer per week, 8 trainingen per 4 weken, voor €47,50 per training.",
+    points: ["8 trainingen per 4 weken.", "60 minuten per training.", "Meer begeleiding en regelmatige progressie.", "€380 per 4 weken, opzegbaar met een opzegtermijn van vier weken."],
+    durations: ["€47,50 per training - €380 per 4 weken"]
   },
   "single-transformatie": {
     title: "Transformatie - 1 persoon",
-    text: "Het meest intensieve traject voor wie echt wil veranderen. Je traint 3 keer per week, 12 trainingen per maand, voor EUR 40 per training.",
-    points: ["12 trainingen per maand.", "60 minuten per training.", "Intensieve begeleiding en maximale structuur.", "EUR 480 per maand, maandelijks opzegbaar."],
-    durations: ["EUR 40 per training - EUR 480 p/m"]
+    text: "Het meest intensieve traject voor wie echt wil veranderen. Je traint 3 keer per week, 12 trainingen per 4 weken, voor €40 per training.",
+    points: ["12 trainingen per 4 weken.", "60 minuten per training.", "Intensieve begeleiding en maximale structuur.", "€480 per 4 weken, opzegbaar met een opzegtermijn van vier weken."],
+    durations: ["€40 per training - €480 per 4 weken"]
   },
   "duo-basis": {
     title: "Duo Basis",
-    text: "Samen starten met personal training. Je traint 1 keer per week met 2 personen voor EUR 32,50 p.p. per training.",
-    points: ["4 trainingen per maand.", "EUR 260 per maand totaal voor 2 personen.", "Geschikt voor duo's die samen willen starten."],
-    durations: ["EUR 32,50 p.p. per training - EUR 260 p/m totaal"]
+    text: "Samen starten met personal training. Je traint 1 keer per week met 2 personen voor €32,50 p.p. per training.",
+    points: ["4 trainingen per 4 weken.", "€260 per 4 weken totaal voor 2 personen.", "Geschikt voor duo's die samen willen starten."],
+    durations: ["€32,50 p.p. per training - €260 per 4 weken totaal voor 2 personen"]
   },
   "duo-progressie": {
     title: "Duo Progressie",
-    text: "Voor duo's die vaker willen trainen en samen een duidelijk ritme willen opbouwen. Je traint 2 keer per week voor EUR 31,25 p.p. per training.",
-    points: ["8 trainingen per maand.", "EUR 500 per maand totaal voor 2 personen.", "Meer begeleiding, meer ritme en meer progressie."],
-    durations: ["EUR 31,25 p.p. per training - EUR 500 p/m totaal"]
+    text: "Voor duo's die vaker willen trainen en samen een duidelijk ritme willen opbouwen. Je traint 2 keer per week voor €31,25 p.p. per training.",
+    points: ["8 trainingen per 4 weken.", "€500 per 4 weken totaal voor 2 personen.", "Meer begeleiding, meer ritme en meer progressie."],
+    durations: ["€31,25 p.p. per training - €500 per 4 weken totaal voor 2 personen"]
   },
   "duo-transformatie": {
     title: "Duo Transformatie",
-    text: "Het meest intensieve duo-traject. Je traint samen 3 keer per week voor EUR 27,50 p.p. per training.",
-    points: ["12 trainingen per maand.", "EUR 660 per maand totaal voor 2 personen.", "Voor duo's die serieus samen resultaat willen behalen."],
-    durations: ["EUR 27,50 p.p. per training - EUR 660 p/m totaal"]
+    text: "Het meest intensieve duo-traject. Je traint samen 3 keer per week voor €27,50 p.p. per training.",
+    points: ["12 trainingen per 4 weken.", "€660 per 4 weken totaal voor 2 personen.", "Voor duo's die serieus samen resultaat willen behalen."],
+    durations: ["€27,50 p.p. per training - €660 per 4 weken totaal voor 2 personen"]
   },
   "online-coaching": {
     title: "Online coaching",
     text: "Voor wie zelfstandig traint, maar professionele structuur en bijsturing wil. Je krijgt begeleiding via de digitale omgeving, zodat training, voeding en voortgang overzichtelijk blijven.",
-    points: ["Persoonlijk trainingsschema per week.", "Voedingsschema en voedingslog per dag.", "Stappen, water, slaap, welzijn en gewicht bijhouden.", "Voortgang, check-ins en persoonlijke bijsturing.", "Geschikt als je op afstand begeleiding wilt met duidelijke accountability."],
-    durations: ["Online coaching - EUR 200 p/m"]
+    points: ["€200 per 4 weken.", "Persoonlijk trainingsschema per week.", "Voedingsschema en voedingslog per dag.", "Stappen, water, slaap, welzijn en gewicht bijhouden.", "Voortgang, check-ins en persoonlijke bijsturing.", "Geschikt als je op afstand begeleiding wilt met duidelijke accountability."],
+    durations: ["Online coaching - €200 per 4 weken"]
   }
 };
+
+Object.values(planDetails).forEach((detail) => {
+  detail.points.push("Alle prijzen inclusief btw. Betaling en facturatie iedere vier weken (28 dagen), 13 betaalperiodes per jaar.",
+    "Opzegbaar met een opzegtermijn van vier weken. Trainingen binnen het pakket horen bij de betreffende vierwekenperiode.",
+    "Minimaal 24 uur vooraf afzeggen is kosteloos; daarna wordt de training in rekening gebracht.",
+    "Voor nieuwe overeenkomsten; bestaande afspraken blijven ongewijzigd.");
+});
 
 function syncHeader() {
   if (!header) return;
@@ -122,7 +129,7 @@ function openSignup(detail) {
   }
   if (signupPlan) signupPlan.value = detail.title;
   if (signupTitle) {
-    signupTitle.textContent = `Je hebt gekozen voor: ${detail.title}. Vink je gewenste duur aan en vul je gegevens in.`;
+    signupTitle.textContent = `Je hebt gekozen voor: ${detail.title}. Je pakket loopt per 4 weken (28 dagen). Controleer je keuze en vul je gegevens in.`;
   }
   renderDurations(detail);
   signupModal.hidden = false;
