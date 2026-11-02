@@ -6,8 +6,8 @@
   --panel: #ffffff;
   --panel-soft: #eef3f0;
   --line: #dbe2e0;
-  --gold: #b98713;
-  --gold-dark: #765706;
+  --gold: #dea438;
+  --gold-dark: #8f5b18;
   --green: #17483d;
   --green-soft: #e8f2ed;
   --night: #0b1113;
@@ -89,7 +89,7 @@ textarea {
   width: 100%;
   height: auto;
   object-fit: contain;
-  aspect-ratio: 2968 / 1257;
+  aspect-ratio: 1774 / 887;
 }
 
 .site-nav {
@@ -116,14 +116,14 @@ textarea {
 .site-nav a:hover,
 .site-nav a.active {
   color: var(--ink);
-  background: rgba(185, 135, 19, 0.12);
+  background: rgba(222, 164, 56, 0.12);
 }
 
 .site-nav .nav-login {
   margin-left: 8px;
   color: #fff;
   background: var(--gold);
-  box-shadow: 0 10px 22px rgba(185, 135, 19, 0.22);
+  box-shadow: 0 10px 22px rgba(222, 164, 56, 0.22);
 }
 
 .site-nav .nav-login:hover {
@@ -208,7 +208,7 @@ textarea {
 .hero-logo {
   width: min(430px, 82vw);
   height: auto;
-  aspect-ratio: 2968 / 1257;
+  aspect-ratio: 1774 / 887;
   object-fit: contain;
   padding: 14px;
   margin-bottom: 28px;
@@ -271,7 +271,7 @@ textarea {
 .button.primary {
   color: #fff;
   background: var(--gold);
-  box-shadow: 0 12px 26px rgba(185, 135, 19, 0.2);
+  box-shadow: 0 12px 26px rgba(222, 164, 56, 0.2);
 }
 
 .button.primary:hover {
@@ -857,7 +857,7 @@ textarea {
 .premium-form textarea:focus {
   background: #fff;
   border-color: var(--gold);
-  box-shadow: 0 0 0 4px rgba(185, 135, 19, 0.14);
+  box-shadow: 0 0 0 4px rgba(222, 164, 56, 0.14);
 }
 
 .form-status {
@@ -958,7 +958,7 @@ textarea {
 
 a.contact-method:hover {
   transform: translateY(-1px);
-  border-color: rgba(185, 135, 19, 0.42);
+  border-color: rgba(222, 164, 56, 0.42);
   box-shadow: 0 8px 18px rgba(16, 20, 23, 0.07);
 }
 
@@ -1156,9 +1156,9 @@ a.contact-method:hover {
 .plan-card:hover,
 .plan-card.active {
   transform: translateY(-1px);
-  border-color: rgba(185, 135, 19, 0.55);
-  background: #fffaf0;
-  box-shadow: 0 12px 28px rgba(185, 135, 19, 0.1);
+  border-color: rgba(222, 164, 56, 0.55);
+  background: #fff8ed;
+  box-shadow: 0 12px 28px rgba(222, 164, 56, 0.1);
 }
 
 .plan-card span {
@@ -1319,9 +1319,9 @@ a.contact-method:hover {
 }
 
 .duration-option input:checked + span {
-  background: #fff8e7;
-  border-color: rgba(185, 135, 19, 0.68);
-  box-shadow: 0 0 0 4px rgba(185, 135, 19, 0.12);
+  background: #fff3dc;
+  border-color: rgba(222, 164, 56, 0.68);
+  box-shadow: 0 0 0 4px rgba(222, 164, 56, 0.12);
 }
 
 .plan-detail {
@@ -1386,7 +1386,7 @@ a.contact-method:hover {
 .footer-brand img {
   width: 240px;
   height: auto;
-  aspect-ratio: 1800 / 790;
+  aspect-ratio: 1774 / 887;
   object-fit: contain;
   padding: 12px;
   background: #fff;
@@ -1668,8 +1668,8 @@ a.contact-method:hover {
   --panel: rgba(255, 255, 255, 0.92);
   --panel-soft: #f8f6ef;
   --line: rgba(16, 21, 27, 0.12);
-  --gold: #d5ac31;
-  --gold-dark: #b88f16;
+  --gold: #dea438;
+  --gold-dark: #a36b1f;
   --green: #2ecb8a;
   --night: #060b12;
   --night-soft: #101821;
@@ -1683,7 +1683,7 @@ html {
 body {
   color: var(--ink);
   background:
-    radial-gradient(circle at 18% 6%, rgba(213, 172, 49, 0.14), transparent 26rem),
+    radial-gradient(circle at 18% 6%, rgba(222, 164, 56, 0.14), transparent 26rem),
     radial-gradient(circle at 88% 18%, rgba(46, 203, 138, 0.10), transparent 30rem),
     linear-gradient(180deg, #f7f3e9 0%, #ece7dc 100%);
   font-weight: 650;
@@ -1732,14 +1732,14 @@ body {
 
 .site-nav .nav-login {
   color: #11161d;
-  background: linear-gradient(135deg, #f2cf61, var(--gold));
+  background: linear-gradient(135deg, #f6ce67, var(--gold));
   border-radius: 18px;
-  box-shadow: 0 14px 28px rgba(213, 172, 49, 0.22);
+  box-shadow: 0 14px 28px rgba(222, 164, 56, 0.22);
 }
 
 .site-nav .nav-login:hover {
   color: #11161d;
-  background: linear-gradient(135deg, #ffe184, #d7aa28);
+  background: linear-gradient(135deg, #ffdf87, #dea438);
 }
 
 .nav-toggle {
@@ -1829,14 +1829,14 @@ body {
 .button.primary,
 .button.light,
 .site-nav .nav-login {
-  background: linear-gradient(135deg, #f1cf62, var(--gold));
+  background: linear-gradient(135deg, #f6ce67, var(--gold));
   color: #10151b;
 }
 
 .button.primary:hover,
 .button.light:hover {
-  background: linear-gradient(135deg, #ffe38d, #d5a728);
-  box-shadow: 0 20px 42px rgba(213, 172, 49, 0.24);
+  background: linear-gradient(135deg, #ffdf87, #dea438);
+  box-shadow: 0 20px 42px rgba(222, 164, 56, 0.24);
 }
 
 .button.ghost-light,
@@ -1856,7 +1856,7 @@ body {
   padding-top: 138px;
   background:
     linear-gradient(135deg, rgba(6, 11, 18, 0.96), rgba(16, 24, 33, 0.94)),
-    radial-gradient(circle at 80% 20%, rgba(213, 172, 49, 0.22), transparent 24rem);
+    radial-gradient(circle at 80% 20%, rgba(222, 164, 56, 0.22), transparent 24rem);
   color: #ffffff;
 }
 
@@ -1937,8 +1937,8 @@ body {
 .icon-badge,
 .timeline-card span,
 .intake-steps span {
-  background: rgba(213, 172, 49, 0.16);
-  color: #a97b0f;
+  background: rgba(222, 164, 56, 0.16);
+  color: #a36b1f;
   border-radius: 16px;
 }
 
@@ -1957,7 +1957,7 @@ body {
 .site-footer {
   background:
     linear-gradient(135deg, rgba(6, 11, 18, 0.98), rgba(14, 22, 30, 0.96)),
-    radial-gradient(circle at 82% 12%, rgba(213, 172, 49, 0.18), transparent 26rem);
+    radial-gradient(circle at 82% 12%, rgba(222, 164, 56, 0.18), transparent 26rem);
   border-radius: 0;
 }
 
@@ -1984,9 +1984,9 @@ body {
 
 .plan-card.active,
 .plan-card:focus-visible {
-  border-color: rgba(213, 172, 49, 0.70);
-  background: linear-gradient(180deg, #ffffff, #fff7df);
-  box-shadow: 0 24px 70px rgba(213, 172, 49, 0.20);
+  border-color: rgba(222, 164, 56, 0.70);
+  background: linear-gradient(180deg, #ffffff, #fff2d9);
+  box-shadow: 0 24px 70px rgba(222, 164, 56, 0.20);
 }
 
 .plan-card strong {
@@ -2016,9 +2016,9 @@ body {
 }
 
 .pricing-card-modern.featured {
-  border-color: rgba(213, 172, 49, 0.82);
-  background: linear-gradient(180deg, #fffdf7 0%, #fff5d8 100%);
-  box-shadow: 0 28px 78px rgba(213, 172, 49, 0.18);
+  border-color: rgba(222, 164, 56, 0.82);
+  background: linear-gradient(180deg, #fffaf3 0%, #fff0d4 100%);
+  box-shadow: 0 28px 78px rgba(222, 164, 56, 0.18);
 }
 
 .pricing-card-modern .plan-title {
@@ -2079,7 +2079,7 @@ body {
   max-width: calc(100% - 36px);
   padding: 8px 10px;
   border-radius: 999px;
-  background: #d5ac31;
+  background: #dea438;
   color: #10151b !important;
   font-size: 0.72rem;
   font-weight: 950;
@@ -2134,8 +2134,8 @@ body {
 .premium-form input:focus,
 .premium-form textarea:focus,
 .premium-form select:focus {
-  outline: 3px solid rgba(213, 172, 49, 0.22);
-  border-color: rgba(213, 172, 49, 0.70);
+  outline: 3px solid rgba(222, 164, 56, 0.22);
+  border-color: rgba(222, 164, 56, 0.70);
 }
 
 .contact-method {
@@ -2152,8 +2152,8 @@ body {
   width: 38px;
   height: 38px;
   border-radius: 14px;
-  background: rgba(213, 172, 49, 0.14);
-  color: #a97b0f;
+  background: rgba(222, 164, 56, 0.14);
+  color: #a36b1f;
   font-weight: 1000;
 }
 
@@ -2307,7 +2307,7 @@ body {
 
 .home-hero .hero-logo {
   width: min(980px, 96vw);
-  aspect-ratio: 2968 / 1257;
+  aspect-ratio: 1774 / 887;
   margin-bottom: 42px;
 }
 
@@ -2393,4 +2393,21 @@ body {
 .plan-card small {
   font-size: 0.98rem;
   line-height: 1.5;
+}
+
+/* Original PDF documents: readable preview plus native open/download actions. */
+.legal-page h1,
+.legal-document {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.legal-document-viewer {
+  display: block;
+  width: 100%;
+  height: 80vh;
+  min-height: 420px;
+  margin-top: 24px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
 }
